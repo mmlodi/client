@@ -1,8 +1,16 @@
-<h1>{{title}}</h1>
 <div class="container text-primary">
-  <ul>
-    <li *ngFor="let country of countries">
-      {{country.FlagUrl}} - {{country.Name}}
-    </li>
-  </ul>
+  <h1>{{title}}</h1>
+  <div class="d-flex mainInfo">
+  <img [src]="imageFlagSource" alt="ImageFlag Source">
+</div>
+<h2 class="text-center text-primary">Guess the Country</h2>
+<form class="d-flex" #checkGuessForm="ngForm" (ngSubmit)="checkGuess()" autocomplete="off">
+  <input 
+  name="textGuess"
+  [(ngModel)]="guess"
+  class="form-control me-2" 
+  type="text" 
+  placeholder="guess">
+  <button class="btn btn-outline-success"  type="submit">GUESS</button>
+</form>
 </div>
