@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ToastrService } from 'ngx-toastr';
 import { connect } from 'rxjs';
 
 @Component({
@@ -16,7 +17,7 @@ export class AppComponent implements OnInit {
   imageFlagSource: any;
   countryName: any;
   
-  constructor(private http: HttpClient, private sanitizer: DomSanitizer){}
+  constructor(private http: HttpClient, private sanitizer: DomSanitizer, private toastr: ToastrService){}
 
   ngOnInit(): void {
     this.getCountry();
@@ -36,12 +37,12 @@ export class AppComponent implements OnInit {
   }
 
   checkGuess() {
-    if(this.countryName == this.guess){
+    if(this.countryName.toLowerCase() == this.guess.toLowerCase()){
+      this.toastr.success("You are right!",this.guess);
       this.getCountry();
-      console.log("You are right:",this.guess);
-      this.guess = '';
     }else{
-      console.log("Wrong answer, try again!","tip:",this.countryName )
+      this.toastr.warning("Try again!","if you want a tip, look at the console");
+      console.log("Wrong answer, try again!","tip:",this.countryName );
     };
   }
 }

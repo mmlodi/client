@@ -1,16 +1,21 @@
-<div class="container text-primary">
-  <h1>{{title}}</h1>
-  <div class="d-flex mainInfo">
-  <img [src]="imageFlagSource" alt="ImageFlag Source">
-</div>
-<h2 class="text-center text-primary">Guess the Country</h2>
-<form class="d-flex" #checkGuessForm="ngForm" (ngSubmit)="checkGuess()" autocomplete="off">
-  <input 
-  name="textGuess"
-  [(ngModel)]="guess"
-  class="form-control me-2" 
-  type="text" 
-  placeholder="guess">
-  <button class="btn btn-outline-success"  type="submit">GUESS</button>
-</form>
-</div>
+<app-nav></app-nav>
+<app-spinner></app-spinner>
+<div class="container text-center" style="margin-top: 50px;">
+  <h2 class="text-center text-primary">Guess the country</h2>
+    <figure class="figure border-dark">
+      <img [src]="imageFlagSource" class="figure-img rounded-0 border" alt="ImageFlag Source">
+    </figure>
+    <form class="form" #checkGuessForm="ngForm" (ngSubmit)="checkGuess()" autocomplete="off">
+        <div class="input-group mb-3">
+          <input 
+          name="textGuess"
+          [(ngModel)]="guess"
+          class="form-control" 
+          type="text" 
+          placeholder="guess">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button"  type="submit">GUESS</button>
+          </div> 
+        </div>
+      </form>
+  </div>
