@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   imageFlagSource: any;
   countryName: any;
   
-  constructor(private http: HttpClient, private sanitizer: DomSanitizer,){}
+  constructor(private http: HttpClient, private sanitizer: DomSanitizer){}
 
   ngOnInit(): void {
     this.getCountry();

@@ -1,5 +1,0 @@
-{
-    "appService.showBuildDuringDeployPrompt": false,
-    "appService.defaultWebAppToDeploy": "/subscriptions/d26ae000-6427-48de-bcd5-2c1afc913ae6/resourceGroups/geography-game/providers/Microsoft.Web/sites/GeographyGame",
-    "appService.deploySubpath": "dist/client"
-}
