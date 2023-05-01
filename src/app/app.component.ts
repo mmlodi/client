@@ -39,6 +39,7 @@ export class AppComponent implements OnInit {
   checkGuess() {
     if(this.countryName.toLowerCase() == this.guess.toLowerCase()){
       this.toastr.success("You are right!",this.guess);
+      this.guess = '';
       this.getCountry();
     }else{
       this.toastr.warning("Try again!","if you want a tip, look at the console");
